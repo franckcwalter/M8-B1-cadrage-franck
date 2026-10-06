@@ -1,44 +1,68 @@
-# M8-B1 — Cadrer un projet IA en autonomie chez un client (2 cas)
+# M8-B1 — Cadrage d’une recherche documentaire pour le cabinet Maître Devalle
 
-> **Repo template.** « Use this template » → `M8-B1-cadrage-<prenom>`. La
-> formatrice t'affecte un client (cas A ou D). Tu mènes un **rendez-vous en
-> ligne** avec ce client fictif, puis tu rédiges un cadrage de **3 pages**.
-> **Pas de code** : posture consultant. Individuel, **mardi 9h15-15h30**, aucun
-> asynchrone.
+Cadrage d’une solution de recherche documentaire pour un cabinet de 12 avocats à
+Bordeaux. Le besoin principal est de retrouver une décision interne déjà obtenue
+ou étudiée en 30 secondes, contre 30 minutes actuellement.
 
-## 🗓️ Ta journée
+Le projet examine les données disponibles, les risques, l’architecture cible et
+les indicateurs de réussite. Le budget annoncé est de 15 000 € au démarrage et de
+quelques centaines d’euros par mois, avec un horizon de six mois privilégiant la
+fiabilité.
 
-| Heure | À faire | Fichier | Mini-cours |
-|---|---|---|---|
-| 9h15-10h00 | Lire le briefing de ton cas (MP Discord), créer ton repo, **préparer 12 questions** (+ 3 de réserve) classées par priorité | `notes_entretien.md` | `01` |
-| 10h00-10h45 | **Rendez-vous client en ligne** (URL sur Discord + ton code perso en MP). **12 réponses max**, **une question à la fois**. Un fichier envoyé par le client apparaît dans « Documents transmis » : télécharge-le dans ton repo | `notes_entretien.md` | `01` |
-| 10h45-12h30 | Cadrage **§2 besoin, §3 données, §4 risques & conformité** | `document_cadrage.md` | `02`, `04`, `07` |
-| 13h30-14h30 | **§5 architecture** (Mermaid) + sobriété, **§6 KPI** + questions ouvertes | `schema_archi_cible.md`, `document_cadrage.md` | `05`, `03` |
-| 14h30 | **Imprévu client** posté sur Discord : identifier ce qu'il change, mettre à jour les sections concernées | `document_cadrage.md` | — |
-| 14h30-15h30 | **§1 synthèse** (en dernier), relecture « persona client » | `document_cadrage.md` | `06` |
-| **15h30** | **Commit « cadrage final » poussé.** Ensuite, bascule en **M8-B2** avec les collègues du même client | — | — |
+## Documents
 
-> Renomme les `*_TEMPLATE.md` en `notes_entretien.md`, `schema_archi_cible.md`,
-> `document_cadrage.md`. Le rendez-vous est **journalisé** : la qualité de tes
-> questions compte dans l'évaluation.
+Le [document de cadrage](./document_cadrage.md) rassemble la synthèse, le besoin
+métier, les données, les risques et la conformité, la solution proposée et les KPI.
 
-## 🏢 Les 2 clients
+| Document | Contenu |
+|---|---|
+| [Notes d’entretien](./notes_entretien.md) | Questions, réponses du client, interprétations et questions ouvertes |
+| [Schéma d’architecture cible](./schema_archi_cible.md) | Préparation des données, recherche hybride, interface interne et traitements des risques |
+| [Extrait du registre](./cas_A_registre_decisions_sample.csv) | 20 décisions décrites par six colonnes |
+| [Ressources](./ressources/README.md) | Mini-cours et références utilisés pour le cadrage |
 
-- **A — Cabinet Maître Devalle** (juridique, 12 avocats) : courriers types + recherche de jurisprudence.
-- **D — Galvaplus Industries** (galvanisation) : être prévenu 48 h avant une panne de bain.
+## Solution proposée
 
-Le briefing complet de **ton** cas t'est envoyé en MP.
+Un moteur de recherche interne combine les mots-clés, la proximité de sens et les
+filtres du registre : date, matière, juridiction et issue. Les résultats affichent
+des extraits et des liens vers les documents originaux pour vérification humaine.
 
-## ✅ Réussite
+La préparation prévoit l’analyse de qualité, l’OCR des scans, la conversion dans
+un format commun et l’anonymisation ou la pseudonymisation. Le texte et les
+métadonnées alimentent un index textuel et un index vectoriel.
 
-- **12 questions préparées et priorisées**, relances pertinentes pendant le rendez-vous.
-- Besoin **reformulé** (≠ recopié). Données existantes vs à acquérir, qualité estimée.
-- Risques 🔴/🟠/🟡 + traitement dans l'archi. **Qualification AI Act et base
-  légale RGPD raisonnées** (usage réel décrit). ≥ 2 menaces de sécurité + mitigation.
-- Archi Mermaid ≥ 4 composants. **Sobriété argumentée** (LLM retenu/refusé : 3 lignes).
-- KPI **chiffrés** + seuils. **Imprévu client intégré**.
-- **3 pages max**, lisible **par le client**. ≥ 3 commits. **Journal de bord** tenu.
+La génération de documents juridiques par LLM est écartée dans un premier temps,
+compte tenu de l’exactitude non garantie et des risques de confidentialité.
 
-## 📚 Ressources
+L’hébergement interne est privilégié. Le départ du prestataire informatique au
+31 décembre conduit à envisager également un cloud administré, sous réserve des
+garanties de confidentialité et du budget.
 
-Voir [`./ressources/`](./ressources/) — 7 mini-cours (dont sécurité modèle) + `liens_officiels.md`.
+## Indicateurs proposés
+
+| Indicateur | Cible | Seuil d’acceptabilité |
+|---|---|---|
+| Temps de recherche | 30 secondes | Quelques minutes |
+| Précision des résultats | 75 % | 50 % |
+| Rappel des documents pertinents | 95 % | 80 % |
+
+Ces objectifs seront évalués lors de tests avec les employés du cabinet.
+
+## Périmètre
+
+Le dépôt contient les livrables de cadrage. Le choix des technologies et des
+modèles, la réalisation du prototype et les tests font partie des prochaines étapes.
+Seul un extrait du registre a été transmis ; aucune décision ni aucun courrier
+n’a été examiné.
+
+## Structure du dépôt
+
+```text
+.
+├── document_cadrage.md                  # Livrable principal
+├── notes_entretien.md                  # Entretien et questions ouvertes
+├── schema_archi_cible.md                # Architecture proposée en Mermaid
+├── cas_A_registre_decisions_sample.csv  # Extrait transmis par le client
+├── ressources/                         # Mini-cours et références
+└── README.md
+```
