@@ -1,4 +1,4 @@
-# Document de cadrage — _ton cas_ (À COMPLÉTER — 3 pages max)
+# Document de cadrage
 
 
 ## 1. Synthèse exécutive (5-6 lignes — rédigée EN DERNIER)
@@ -47,7 +47,7 @@ La recherche documentaire interne au cabinet ne relève pas du cas à haut risqu
 
 Si la solution génère des courriers à valeur juridique (mises en demeure, transmissions de dossiers) en analysant les faits et le droit et en appliquant le droit à une situation concrète, elle pourrait être classée **à haut risque**, à condition d’être utilisée par une autorité judiciaire ou pour son compte, ou de manière similaire dans le règlement extrajudiciaire d’un litige. Cette classification entraînerait des obligations renforcées, selon le rôle du cabinet : gestion des risques, documentation, traçabilité, contrôle humain, exactitude, robustesse et cybersécurité.
 
-**RGPD** : _base légale proposée et pourquoi ; profilage ? art. 22 (2 conditions) ?_
+**RGPD** :
 
 | Risque (éthique, métier, conformité) | 🔴/🟠/🟡/⚪ | Obligation ou raison | Traitement dans l'archi |
 |---|---|---|---|
@@ -59,8 +59,7 @@ Si la solution génère des courriers à valeur juridique (mises en demeure, tra
 | Résultats erronés ou jurisprudences inventées | 🔴 | Une erreur dans un courrier ou une jurisprudence inventée engage la responsabilité professionnelle de l’avocat. | Sources consultables et vérification humaine complète ; si génération, vérifier chaque référence. |
 | Divulgation d’informations confidentielles | 🔴 | Respect du secret professionnel et protection des dossiers non anonymisés. | Utilisation interne ; traitement à préciser selon l’hébergement et les éventuels prestataires retenus. |
 
-**Sécurité du modèle** — selon l'**exposition** de ton archi : 2 menaces
-plausibles minimum, les autres écartées en 1 ligne. Mitiger ≠ supprimer.
+**Sécurité du modèle**
 
 | Menace | Plausibilité sur CE cas | Mitigation proposée | Risque résiduel |
 |---|---|---|---|
